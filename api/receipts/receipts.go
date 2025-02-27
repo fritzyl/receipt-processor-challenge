@@ -3,9 +3,9 @@ package receipts
 import (
 	"time"
 
-	"github.com/fritzyl/receipt-processor-challenge/rules"
-	"github.com/fritzyl/receipt-processor-challenge/types"
-	"github.com/fritzyl/receipt-processor-challenge/utilities"
+	"github.com/fritzyl/receipt-processor-challenge/api/rules"
+	"github.com/fritzyl/receipt-processor-challenge/api/types"
+	"github.com/fritzyl/receipt-processor-challenge/api/utilities"
 	"github.com/google/uuid"
 	validator "gopkg.in/validator.v2"
 )

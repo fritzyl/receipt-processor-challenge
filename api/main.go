@@ -1,12 +1,12 @@
-package main
+package api
 
 import (
 	"net/http"
 
-	"github.com/fritzyl/receipt-processor-challenge/routes"
+	"github.com/fritzyl/receipt-processor-challenge/api/routes"
 )
 
-func main() {
+func Serve() {
 	http.ListenAndServe(":8080", buildServer())
 }
 

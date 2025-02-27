@@ -6,8 +6,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/fritzyl/receipt-processor-challenge/types"
-	"github.com/fritzyl/receipt-processor-challenge/utilities"
+	"github.com/fritzyl/receipt-processor-challenge/api/types"
+	"github.com/fritzyl/receipt-processor-challenge/api/utilities"
 )
 
 type Rule interface {
@@ -21,7 +21,7 @@ type RetailerAlphaNumericRule struct {
 }
 
 func (rule RetailerAlphaNumericRule) Evaluate() {
-	alphaNumericCount := utilities.CountAlphaNumericChars(rule.Receipt.Retailer)
+	alphaNumericCount := utilities.AlphaNumericCount(rule.Receipt.Retailer)
 	awardedPoints := alphaNumericCount * rule.Points
 	IncrementPoints(rule.Receipt, awardedPoints, rule.Name)
 }

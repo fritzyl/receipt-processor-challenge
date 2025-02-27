@@ -1,16 +1,12 @@
 package utilities
 
-func isAlphaNumeric(byt byte) bool {
-	// Check a-z, A-Z, 0-9
-	return (byt >= 'a' && byt <= 'z') || (byt >= 'A' && byt <= 'Z') || (byt >= '0' && byt <= '9')
-}
+import (
+	"regexp"
+)
 
-func CountAlphaNumericChars(testString string) int64 {
-	var alphaNumericCount int64 = 0
-	for id := 0; id < len(testString); id++ {
-		if isAlphaNumeric(testString[id]) {
-			alphaNumericCount += 1
-		}
-	}
-	return alphaNumericCount
+func AlphaNumericCount(str string) int64 {
+	reg, _ := regexp.Compile("[^a-zA-Z0-9]+")
+
+	stripped := reg.ReplaceAllString(str, "")
+	return int64(len(stripped))
 }

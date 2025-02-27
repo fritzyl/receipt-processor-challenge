@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/fritzyl/receipt-processor-challenge/receipts"
-	"github.com/fritzyl/receipt-processor-challenge/types"
+	"github.com/fritzyl/receipt-processor-challenge/api/receipts"
+	"github.com/fritzyl/receipt-processor-challenge/api/types"
 )
 
 func Register(server *http.ServeMux) {
