@@ -1,13 +1,15 @@
 package api
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/fritzyl/receipt-processor-challenge/api/routes"
 )
 
-func Serve() {
-	http.ListenAndServe(":8080", buildServer())
+func Serve(port string) {
+	fmt.Println("Listening on Port", port)
+	http.ListenAndServe(port, buildServer())
 }
 
 func buildServer() *http.ServeMux {
