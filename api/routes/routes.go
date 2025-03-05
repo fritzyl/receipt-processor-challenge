@@ -6,7 +6,6 @@ import (
 
 	"github.com/fritzyl/receipt-processor-challenge/api/receipts"
 	"github.com/fritzyl/receipt-processor-challenge/api/types"
-	"github.com/google/uuid"
 )
 
 func Register(server *http.ServeMux) {
@@ -27,9 +26,7 @@ func processReceipt(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
-	// Prevent injection
-	receipt.Id = uuid.Nil
-	receipt.Points = 0
+
 	// Validate Receipt
 	errs := receipts.Validate(receipt)
 

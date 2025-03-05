@@ -15,10 +15,10 @@ type Item struct {
 
 type Receipt struct {
 	// Generated uuid
-	Id uuid.UUID
+	Id uuid.UUID `json:"-"`
 
 	// Calculated Points
-	Points int64
+	Points int64 `json:"-"`
 
 	// The name of the retailer or store the receipt is from.
 	Retailer string `json:"retailer" validate:"regexp=^[\\w\\s\\-&]+$"`
